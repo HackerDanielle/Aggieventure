@@ -1,0 +1,403 @@
+<style>
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: "Aldrich";
+  margin: 2em;
+  background-color: #000000;
+}
+
+h1 {
+  font-size: 40px;
+  font-style: oblique;
+  color: #721F0E;
+  text-align: center;
+  background-color: #FFFFFF;
+  border-radius: 15px 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+#authors {
+  font-size: 20px;
+}
+
+#description {
+  font-weight: italicized;
+}
+
+p {
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.link1 {
+  font-style: underline;
+  color: #FFFFFF;
+}
+
+.link2 {
+  font-style: underline;
+  color: #721F0E;
+}
+
+.action1 {
+  color: #FFFFFF;
+  border-radius: 15px 50px;
+  background-color: #721F0E;
+  padding-top: 20px;
+  padding-bottom: 150px;
+}
+
+.action2 {
+  color: #721F0E;
+  border-radius: 50px 15px;
+  background-color: #FFFFFF;
+  padding-top: 20px;
+  padding-bottom: 150px;
+}
+.center{
+  text-align: center;
+}
+.result {
+  visibility: hidden;
+}
+
+</style>
+
+<script>
+/* If you're feeling fancy you can add interactivity 
+    to your site with Javascript */
+
+var study = 0;
+var x = 0;
+
+document.getElementById("studycounter").innerHTML = study;
+
+function studytime() {
+  study = study + 1;
+  document.getElementById("studycounter").innerHTML = study;
+}
+
+function quiz(){
+  switch (study){
+    case 0:
+      quiz = "You failed miserably...";
+      return quiz;
+      break;
+    case 1:
+      quiz = "You managed to scrape by with a C.";
+      return quiz;
+      break;
+    case (study >= 2):
+      quiz = "Thanks to your extreme knowledge, you managed to score an A!";
+      return quiz;
+      break;
+    default:
+      quiz = "ERROR";
+      return quiz;
+      break;
+  }
+  document.getElementById("quiz").innerHTML = quiz(study)
+}
+
+
+document.getElementById("counter").innerHTML = x;
+
+function nightmareFuel() {
+  x = x - 1;
+  document.getElementById("counter").innerHTML = x
+}
+
+function dreamFuel() {
+  x = x + 1;
+  document.getElementById("counter").innerHTML = x
+}
+
+function evansFloor(y) {
+  if (y > 1) {
+      document.getElementById("quiet").style.visibility = "visible";
+      document.getElementById("normal").style.visibility = "hidden";
+  }else{ 
+      document.getElementById("quiet").style.visibility = "hidden";
+      document.getElementById("normal").style.visibility = "visible";
+}}
+
+function zachFloor(y) {
+  if (y > 1) {
+      document.getElementById("stairs").style.visibility = "visible";
+      document.getElementById("garden").style.visibility = "hidden";
+  }else{ 
+      document.getElementById("garden").style.visibility = "visible";
+      document.getElementById("stairs").style.visibility = "hidden";
+  }}
+
+function clothes() {
+      document.getElementById("onlyChoice").style.visibility = "visible";
+      dreamFuel();
+}
+
+function breakfast(y) {
+  if (y > 1) {
+      document.getElementById("eat").style.visibility = "visible";
+      document.getElementById("skip").style.visibility = "hidden";
+      dreamFuel();
+  }else{ 
+      document.getElementById("eat").style.visibility = "hidden";
+      document.getElementById("skip").style.visibility = "visible";
+      nightmareFuel();
+  }}
+
+function pet(y) {
+  if (y > 1) {
+      document.getElementById("pet").style.visibility = "visible";
+      document.getElementById("noPet").style.visibility = "hidden";
+      dreamFuel();
+  }else{ 
+      document.getElementById("pet").style.visibility = "hidden";
+      document.getElementById("noPet").style.visibility = "visible";
+      nightmareFuel();
+  }}
+
+function goBack() {
+      document.getElementById("noPet").style.visibility = "hidden";
+}
+
+function food(y) {
+  if (y > 1) {
+      document.getElementById("food").style.visibility = "visible";
+      document.getElementById("bottom").style.visibility = "hidden";
+      dreamFuel();
+  }else{ 
+      document.getElementById("food").style.visibility = "hidden";
+      document.getElementById("bottom").style.visibility = "visible";
+      dreamFuel();
+  }}
+
+function attend(y) {
+  if (y > 1) {
+      document.getElementById("classTime").style.visibility = "visible";
+      document.getElementById("noClass").style.visibility = "hidden";
+      dreamFuel();
+  }else{ 
+      document.getElementById("classTime").style.visibility = "hidden";
+      document.getElementById("noClass").style.visibility = "visible";
+      nightmareFuel();
+  }}
+
+function dream() {
+ if (x < -5) {
+   document.getElementById("dream").innerHTML = "You have a horrible dream where Reveille and the leprechaun from the Luck Charms commercials chase you all around campus because they thought you were a 2 percenter. Ssssssssss!";
+ } else  if (x === -5){
+   document.getElementById("dream").innerHTML = "You dream about flying around campus but then a flying wildcat pounces on you and you come crashing to the ground. I bet you didn't see that one coming!";
+ } else if (x === -4) {
+   document.getElementById("dream").innerHTML = "You have a bad nightmare where you show up to class naked and everyone laughs at you and your professor fails you for the whole semester. How could he!";
+ } else if (x === -3) {
+   document.getElementById("dream").innerHTML = "You have a dream about trying to pet Reveille but then she bites you and runs away. Oh no Reveille please come back!";
+ } else if (x === -2) {
+   document.getElementById("dream").innerHTML = "You're eating pie in your dream when you realize it's actually not pie at all but instead a rock in the shape of a pie! What's going on here?!";
+ } else if (x ===-1) {
+   document.getElementById("dream").innerHTML = "You have a strange dream of being at yell practice when all of a sudden, everyone turns into frogs! Why not try kissing one?";   
+ } else if (x === 0) {
+   document.getElementById("dream").innerHTML = "You have a dream that you forget about when you wake up. What if the aliens wiped your memory?";
+ } else if (x === 1) {
+   document.getElementById("dream").innerHTML = "You have a decent dream where you go to a football game and the Aggies won! Yeah saw them horns off!";
+ } else if (x === 2) {
+   document.getElementById("dream").innerHTML = "You dream that the yell leaders are hanging out with you and call you the coolest person they've ever met. Wow aren't they nice!";
+ } else if (x === 3) {
+   document.getElementById("dream").innerHTML = "You have a nice dream where you got to pet Reveille and she didn't bite you! You should feel honored!";
+ } else if (x === 4) {
+   document.getElementById("dream").innerHTML = "You go to class and that professor you didn't like turned into a rabbit and everyone cheered. Is this some kind of magic trick?";
+ } else if (x === 5) {
+   document.getElementById("dream").innerHTML = "You have a dream that you and the alien you broke out of Area 51 were watching Spongebob. I guess the raid was a success?";
+ } else if (x === 10) {
+   document.getElementById("dream").innerHTML = "What are you still doing here playing around with this program. Go home. There's no achievements here.";
+ } else if (x > 5 ) {
+   document.getElementById("dream").innerHTML = "You have a dream that Spongebob Squarepants tells you the secret Krabby Patty formula and gives you a lifetime supply of Krabby Pattys! Don't eat too many or you might explode, literally!";
+ }
+}
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Aggieventure</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- import the webpage's stylesheets -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aldrich">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <h1 id = "top">Aggieventure</h1>
+    
+    <p id = "authors" class = "center">
+      By: Danielle and Roshini
+    </p>
+    
+    <p id = "description">
+      <i>Enter the life of an Aggie student... <br> what could possibly go wrong?</i>
+    </p>
+    
+    <p class = "action1">
+      You wake up and get out of bed. What do you chose to wear? <br>
+      <a class = "link1" href = "#onlyChoice" onclick = "return clothes();">Aggie Shirt</a> <br>
+      <a class = "link1" href = "#onlyChoice" onclick = "return clothes();">Aggie Shirt</a>
+    </p>
+    <a href = "#top">Back to Top</a>
+    
+    <p id = "onlyChoice" class = "result">
+      Good choice!! 
+    </p>
+    
+    <p class = "action2">
+      You are now dressed but are feeling a little hungry. What do you do? <br>
+      <a class = "link2" href = "#eat" onclick = "return breakfast(2);">Eat Breakfast</a> <br>
+      <a class = "link2" href = "#skip" onclick = "return breakfast(0);">Skip Breakfast</a>
+    </p>
+    <a href = "#top">Back to Top</a>
+    
+    <p id = "skip" class = "result">
+      That's probably not good but you do you.
+    </p>
+    
+    <p id = "eat" class = "result">
+      You had a bowl of cereal. The cereal was Lucky Charms because that's the only good cereal.
+    </p>
+    
+    <p class = "action1">
+      Now you feel like studying. Where do you go to study? <br>
+      <a class = "link1" href = "#evans" onclick = "return dreamFuel();">Evans Library</a> <br>
+      <a class = "link1" href = "#zach" onclick = "return dreamFuel();">Zachry Building</a> <br>
+      <a class = "link1" href = "#nostudy" onclick = "return nightmareFuel();">Nah,never mind.</a>
+    </p>
+    <a href = "index.html#top">Back to Top</a>
+    
+    <!-- Code for Evans -->
+    <p class = "action2" id = "evans">
+      You go to the Evans Library but now you have to chose a floor to go on. Do you go on a quiet floor or a normal floor? <br>
+      <a class = "link2" href = "#quiet" onclick = "return evansFloor(2)">Quiet Floor</a> <br>
+      <a class = "link2" href = "#normal" onclick = "return evansFloor(0);">Normal Floor</a> <br>
+      <a class = "link2" href = "index.html#lunch">Nah, never mind.</a>
+    </p>
+    
+    <p id = "quiet" class = "result">
+      You go to a quiet floor. You are studying when you sneezed really loudly. Everyone turned and stared at you. Whoops.<br>
+      <a class = "link1" onclick = "return studytime()">(Do as much studying as you can)</a>
+    </p>
+    
+    <p id = "normal" class = "result">
+      You go to a normal floor. You are studying when suddenly some people behind you start being super loud. You do not get a lot of studying done.<br>
+      <a class = "link1" onclick = "return studytime()">(Do as much studying as you can)</a>
+    </p>
+
+    <!-- Code for Zach -->
+    <p class = "action1" id = "zach">
+      You go to the ZACH but now you have to chose where to study. Where do you go? <br>
+      <a class = "link1" href = "#stairs" onclick = "return zachFloor(2)">The Stairs</a> <br>
+      <a class = "link1" href = "#description" onclick = "return zachFloor(0)">The Garden</a> <br>
+      <a class = "link1" href = "index.html#lunch">Nah, never mind.</a>
+    </p>
+    
+    <p id = "stairs" class = "result">
+      You go to the stairs to study. You are studying but people keep walking by you and being loud. You have trouble studying.<br>
+      <a class = "link1" onclick = "return studytime()">(Do as much studying as you can)</a>
+    </p>
+    
+    <p id = "garden" class = "result">
+      You go to the Garden to study. Unforturnately for you, it's over a 100 degees outside. As soon as you walk outside, you instantly melt. Bad idea going out there.<br> 
+      <a class = "link1" onclick = "return studytime()">(Do as much studying as you can)</a>
+    </p>
+    
+    <p>
+    <a class = "link1" href = "#lunch">Leave for MSC</a>
+    </p>
+    
+    <p id = "nostudy" class = "result">
+      You decide to go to the MSC for lunch.
+    </p>
+    
+    <p class = "action2" id = "lunch">
+      Where do you go to eat? <br>
+      <a class = "link2" href = "#food" onclick = "return food(2);">The Food Court</a> <br>
+      <a class = "link2" href = "#bottom" onclick = "return food(0);">The Bottom Level</a>
+    </p>
+    <a href = "#top">Back to Top</a>
+    
+    <p id = "food" class = "result">
+      You go to the Food Court in the MSC. You get your food and spot a friend. You sit with your friend and have a nice conversation. You finish your food.
+    </p>
+    
+    <p id = "bottom" class = "result">
+      You go to the Bottom Level. You get some Panda Express and watch Spongebob on the TVs.
+    </p>
+    
+    <p class = "action1" id = "rev">
+      You are about to leave the MSC when you spot her. She has beautiful brown hair, the most gorceous of eyes, and four cute little paws. You found Reveille! What do you do?<br>
+      <a class = "link1" href = "#pet" onclick = "return pet(2);">Pet Her, Of Course</a> <br>
+      <a class = "link1" href = "#noPet" onclick = "return pet(0);">Don't Pet Her Like a Monster</a>
+    </p>
+    <a href = "#top">Back to Top</a>
+    
+    <p id = "pet" class = "result">
+      You pet her fluffy head. She is definitely best girl. You leave the MSC.
+    </p>
+    
+    <p id = "noPet" class = "result">
+      You're not allowed to not pet her. I don't make the rules. <br>
+      <a class = "link1" href = "#rev" onclick = "return goBack()">Do it right this time</a>
+    </p>
+    
+    <p class = "action2">
+      You are outside and realize you have class soon! What do you do? <br>
+      <a class = "link2" href = "#classTime" onclick = "return attend(2);">Go to Class</a> <br>
+      <a class = "link2" href = "#noClass" onclick = "return attend(0);">Skip Class</a>
+    </p>
+    <a href = "#top">Back to Top</a>
+    
+    <p id = "classTime" class = "result">
+      You go to class. You almost fall asleep from how boring it was but are glad you won't be behind. <br>
+      <a class = "link1" onclick = "return studytime()">(Take notes)</a>
+    </p>
+ 
+    <p id = "noClass" class = "result">
+      You skip class like the rebel you are. I hope you like working at McDonald's. Anyways, you skip class and are now behind in your school work.
+    </p>
+    
+    <p>
+      Your next class is a recitation related to the one before. Your TA springs a suprise quiz on you.
+    </p>
+   
+    <p id = "studycounter"></p>
+    
+    <p>The result is...</p>
+    
+    <p id = "quiz" onclick = "quiz()">(Click here)</p>
+      
+    <p class = "result">
+      You go back to your dorm and decide to sleep. <br>
+    </p>
+      
+    <div class = "center">
+    <input class="button" type="button" value="Dream" onclick = "dream()">
+    </div>
+    
+    <p> The Dream Scale</p>
+    <p id = "counter"> 0 </p>
+    
+    <p id = "dream"> </p>
+    
+    <a href = "#top">Back to Top</a>
+    
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
